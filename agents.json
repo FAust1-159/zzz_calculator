@@ -1,0 +1,19 @@
+[
+	{
+		"name": "Hoshimi Miyabi",
+		"attribute": "Frost",
+		"type": "Attack"
+	},
+
+	{
+		"name": "Nicole",
+		"attribute": "Ether",
+		"type": "Support"
+	},
+
+	{
+		"name": "Astra Yao",
+		"attribute": "Ether",
+		"type": "Support"
+	}
+]
