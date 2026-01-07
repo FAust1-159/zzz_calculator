@@ -9,7 +9,7 @@
 			"attribute": "Ice",
 			"attack-type": "slash",
 			"faction": "Victoria Housekeeping Co.",
-			"activate-potential": true,
+			"activate-potential": false,
 			"mindscape-cinema": {
 				"level-1": {
 					
@@ -22,98 +22,70 @@
 					"normal": {
 						"name": "Saw Teeth Trimming",
 						"attr-dmg": "Physical",
+						"primary-type": "Basic Attack",
+						"secondary-type": "",
 						"multi-hit": true,
-						"first-hit": {
-							"base-multiplier": 48.8,
-							"level-factor": 4.5
-						},
-						"second-hit": {
-							"base-multiplier": 111.1,
-							"level-factor": 10.1
-						},
-						"third-hit": {
-							"base-multiplier": 297.3,
-							"level-factor": 27.1
-						}
+						"base-multipliers": [48.8, 111.1, 297.3],
+						"level-factors": [4.5, 10.1, 27.1],
+						"variations": ["1-Hit", "2-Hit", "3-Hit"]
 					},
 					"infused": {
 						"name": "Flash Freeze Trimming",
 						"attr-dmg": "Ice",
+						"primary-type": "Basic Attack",
+						"secondary-type": "",
 						"multi-hit": true,
-						"first-hit": {
-							"base-multiplier": 99.6,
-							"level-factor": 9.1
-						},
-						"second-hit": {
-							"base-multiplier": 184.0,
-							"level-factor": 16.8
-						},
-						"third-hit": {
-							"base-multiplier": 496.2,
-							"level-factor": 45.2
-						}
+						"base-multipliers": [99.6, 184.0, 496.2],
+						"level-factors": [9.1, 16.8, 45.2],
+						"variations": ["1-Hit", "2-Hit", "3-Hit"]
 					},
 					"ap-attack-1": {
 						"name": "Glacial Blade Wave",
 						"attr-dmg": "Ice",
+						"primary-type": "Basic Attack",
+						"secondary-type": "",
 						"multi-hit": true,
-						"first-hit": {
-							"base-multiplier": 230.2,
-							"level-factor": 21.0
-						},
-						"second-hit": {
-							"base-multiplier": 146.8,
-							"level-factor": 13.4
-						}
+						"base-multipliers": [230.2, 146.8],
+						"level-factors": [21.0, 13.4],
+						"variations": ["1-Hit", "2-Hit"]
 					},
 					"ap-attack-2": {
 						"name": "Icy Blade",
 						"attr-dmg": "Ice",
+						"primary-type": "Basic Attack",
+						"secondary-type": "",
 						"multi-hit": true,
-						"small-enemy": {
-							"base-multiplier": 181.2,
-							"level-factor": 16.5
-						},
-						"medium-enemy": {
-							"base-multiplier": 220.2,
-							"level-factor": 20.1
-						},
-						"large-enemy": {
-							"base-multiplier": 259.2,
-							"level-factor": 23.7
-						}
+						"base-multipliers": [181.2, 220.2, 259.2],
+						"level-factors": [16.5, 20.1, 23.7],
+						"variations": ["Small Enemy", "Medium Enemy", "Large Enemy"]
 					}
 				},
 				"dodge": {
 					"roaming-press": {
 						"name": "Arctic Ambush (Push)",
 						"attr-dmg": "Ice",
+						"primary-type": "Dodge",
+						"secondary-type": "Dash Attack",
 						"multi-hit": true,
-						"spinning-slash": {
-							"base-multiplier": 62.3,
-							"level-factor": 5.7
-						},
-						"swift-scissors": {
-							"base-multiplier": 127.6,
-							"level-factor": 11.6
-						}
+						"base-multipliers": [62.3, 127.6],
+						"level-factors": [16.5, 20.1, 23.7],
+						"variations": ["Spinning Slash", "Swift Scissors"]
 					},
 					"roaming-hold": {
 						"name": "Arctic Ambush (Hold)",
 						"attr-dmg": "Ice",
+						"primary-type": "Dodge",
+						"secondary-type": "Dash Attack",
 						"multi-hit": true,
-						"spinning-slash": {
-							"base-multiplier": 62.3,
-							"level-factor": 5.7
-						},
-						"charged-scissors": {
-							"base-multiplier": 158.2,
-							"level-factor": 14.2
-						}
+						"base-multipliers": [62.3, 158.2],
+						"level-factors": [5.7, 14.2],
+						"variations": ["Spinning Slash", "Charged Scissors"]
 					},
 					"normal": {
 						"name": "Monstrous Wave",
 						"attr-dmg": "Physical",
+						"primary-type": "Dodge",
+						"secondary-type": "Dash Attack",
 						"multi-hit": false,
 						"base-multiplier": 77.0,
 						"level-factor": 7.0
@@ -121,6 +93,8 @@
 					"infused": {
 						"name": "Cold Snap",
 						"attr-dmg": "Ice",
+						"primary-type": "Dodge",
+						"secondary-type": "Dash Attack",
 						"multi-hit": false,
 						"base-multiplier": 145.7,
 						"level-factor": 23.3
@@ -128,9 +102,105 @@
 					"perfect-dodge": {
 						"name": "Reef Rock",
 						"attr-dmg": "Ice",
+						"primary-type": "Dodge",
+						"secondary-type": "Dodge Counter",
 						"multi-hit": false,
 						"base-multiplier": 152.6,
 						"level-factor": 13.9
+					}
+				},
+				"assist": {
+					"quick": {
+						"name": "Shark Sentinel",
+						"attr-dmg": "Ice",
+						"primary-type": "Assist",
+						"secondary-type": "Quick",
+						"multi-hit": false,
+						"base-multiplier": 121.1,
+						"level-factor": 11.1
+					},
+					"follow-up": {
+						"name": "Shark Cruiser",
+						"attr-dmg": "Ice",
+						"primary-type": "Assist",
+						"secondary-type": "Follow-Up",
+						"multi-hit": false,
+						"base-multiplier": 437.9,
+						"level-factor": 39.9
+					}
+				},
+				"special-attack": {
+					"normal": {
+						"name": "Drift",
+						"attr-dmg": "Ice",
+						"primary-type": "Special Attack",
+						"secondary-type": "",
+						"multi-hit": false,
+						"base-multiplier": 50.5,
+						"level-factor": 4.6
+					},
+					"ex-0": {
+						"name": "Tail Swipe",
+						"attr-dmg": "Ice",
+						"primary-type": "Special Attack",
+						"secondary-type": "EX",
+						"multi-hit": false,
+						"base-multiplier": 377.2,
+						"level-factor": 34.3
+					},
+					"ex-1": {
+						"name": "Sharknami",
+						"attr-dmg": "Ice",
+						"primary-type": "Special Attack",
+						"secondary-type": "EX",
+						"multi-hit": false,
+						"base-multiplier": 550.3,
+						"level-factor": 50.3
+					}
+				},
+				"chain-attack": {
+					"chain": {
+						"name": "Avalanche",
+						"attr-dmg": "Ice",
+						"primary-type": "Chain Attack",
+						"secondary-type": "",
+						"multi-hit": false,
+						"base-multiplier": 794.6,
+						"level-factor": 72.3
+					},
+					"ultimate": {
+						"name": "Endless Winter",
+						"attr-dmg": "Ice",
+						"primary-type": "Chain Attack",
+						"secondary-type": "Ultimate",
+						"multi-hit": false,
+						"base-multiplier": 1890.8,
+						"level-factor": 171.9
+					}
+				},
+				"core": {
+					"passive": {
+						"name": "Sharp Toothed",
+						"primary-type": "Core Skill",
+						"secondary-type": "Core Passive",
+						"hasBuff": true,
+						"self-applied": true,
+						"benefits": ["Crit DMG"],
+						"multipliers": {
+							"crit-dmg": [50.0, 58.3, 66.6, 75.0, 83.3, 91.6, 100.0]
+						}
+					},
+					"additional": {
+						"name": "Rising Storm",
+						"primary-type": "Core Skill",
+						"secondary-type": "Additional Ability",
+						"hasBuff": true,
+						"self-applied": true,
+						"condition": ["Stun", "Ice", "Victoria Housekeeping Co."],
+						"benefits": ["Ice"],
+						"multipliers": {
+							"ice": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+						}
 					}
 				}
 			}
