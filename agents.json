@@ -9,163 +9,222 @@
 			"attribute": "Ice",
 			"attackType": "Slash",
 			"faction": "Victoria Housekeeping Co.",
-			"activatePotential": true,
 			"mindscapeCinema": {
 				"level1": {
-					"hasBuff": true,
-					"selfApplied": true,
-					"benefits": ["Crit Rate"],
-					"critRate": [0.02, 0.04, 0.06, 0.08, 0.1, 0.12],
-					"maxStack": 6
+					"mcId": "ellen_mc1",
+					"scope": "self",
+					"buffs": [
+						{
+							"buffId": "ellen_mc1_buff",
+							"name": "Glacial Omen",
+							"stacking": {
+								"maxStacks": 6
+							},
+							"filters": ["Ice", "Attack"],
+							"effects": [
+								{
+									"statId": "critRate",
+									"increase": [0.02, 0.04, 0.06, 0.08, 0.10, 0.12]
+								}
+							]
+						}
+					]
 				},
 				"level2": {
-					"hasBuff": true,
-					"selfApplied": true,
-					"benefits": ["Crit DMG"],
-					"critDmg": [0.0, 0.2, 0.3, 0.4, 0.5, 0.6]
+					"mcId": "ellen_mc2",
+					"scope": "self",
+					"buffs": [
+						{
+							"buffId": "ellen_mc2_buff",
+							"name": "Arctic Ocean Predator",
+							"filters": ["Ice", "Attack"],
+							"effects": [
+								{
+									"statId": "critDmg",
+									"increase": [0.0, 0.2, 0.4, 0.6]
+								}
+							]
+						}
+					] 
 				},
 				"level3": {
-					"hasBuff": true,
-					"selfApplied": true,
+					"mcId": "ellen_mc3",
+					"scope": "self",
 					"firstMaxPlus": 2
 				},
 				"level4": {
-					"hasBuff": false,
-					"selfApplied": true
+					"mcId": "ellen_mc4",
+					"scope": "self"
 				},
 				"level5": {
-					"hasBuff": true,
-					"selfApplied": true,
+					"mcId": "ellen_mc5",
+					"scope": "self",
 					"secondMaxPlus": 2
 				},
 				"level6": {
-					"hasBuff": true,
-					"selfApplied": true,
-					"benefits": ["PEN Ratio", "Dash Attack"],
-					"penRatio": [0.2],
-					"theFeastBeginsStack": [0, 1, 2, 3],
-					"dashAttackBuff": 2.5 
+					"mcId": "ellen_mc6",
+					"scope": "self",
+					"buffs": [
+						{
+							"buffId": "ellen_mc6_buff",
+							"name": "The Feast Begins",
+							"stacking": {
+								"maxStacks": 3
+							},
+							"effects": [
+								{
+									"statId": "penRatio",
+									"increase": [0.2]
+								},
+								{
+									"skillId": "dodge_hold",
+									"increase": [2.5]
+								}
+							]
+						}
+					]
 				}
 			},
 
 			"potentialVision": {
-				"active": true,
-				"permafrostZone": {
-					"hasBuff": true,
-					"selfApplied": true,
-					"benefits": ["Crit DMG"],
-					"multipliers": {
-						"baseMultiplier": 0.016,
-						"levelFactor": 0.08
-					},
-					"maxStack": 10,
-					"hasDebuff": true,
-					"debuffs": {
-						"demerit": ["Ice RES"],
-						"iceRes": [0.033, 0.05, 0.067, 0.083, 0.1]
+				"potentialId": "ellen_pv_permafrost",
+				"name": "Permafrost Zone",
+				"scope": "self",
+				"stacking": {
+					"maxStacks": 10
+				},
+				"buffs": [
+					{
+						"buffId": "potential_passive_buff",
+						"name": "Permafrost Zone",
+						"effects": [
+							{
+								"statId": "critDmg",
+								"increase": [0.016, 0.024, 0.032, 0.040, 0.048]
+							}
+						]
 					}
-				}
+				],
+				"debuffs": [
+					{
+						"debuffId": "potential_passive_debuff",
+						"name": "Permafrost Zone",
+						"effects": [
+							{
+								"statId": "iceRes",
+								"decrease": [0.033, 0.05, 0.067, 0.083, 0.1]
+							}
+						]
+					}
+				]
 			},
 
 			"stats": {
-				"HP": [ 617, 700, 784, 868, 951, 1035, 1119, 1203, 1286, 1370,
+				"hp": [ 617, 700, 784, 868, 951, 1035, 1119, 1203, 1286, 1370,
 						1877, 1960, 2044, 2128, 2212, 2295, 2379, 2463, 2547, 2630,
 						3138, 3222, 3305, 3389, 3473, 3557, 3640, 3724, 3808, 3891,
 						4398, 4482, 4566, 4649, 4733, 4817, 4901, 4984, 5068, 5152,
 						5659, 5743, 5827, 5911, 5994, 6078, 6162, 6246, 6329, 6413,
 						6920, 7003, 7087, 7171, 7255, 7338, 7422, 7506, 7589, 7673 ],
-				"ATK": [ 135, 143, 151, 159, 168, 176, 184, 192, 201, 209, 
+				"atk": [ 135, 143, 151, 159, 168, 176, 184, 192, 201, 209, 
 						 265, 273, 282, 290, 298, 306, 315, 323, 331, 339,
 						 396, 404, 412, 420, 429, 437, 445, 453, 462, 470,
 						 527, 535, 544, 552, 560, 569, 577, 585, 593, 602,
 						 658, 666, 674, 683, 691, 699, 707, 716, 724, 732,
 						 788, 797, 805, 813, 821, 830, 838, 846, 854, 863 ],
-				"DEF": [ 49, 55, 62, 68, 75, 82, 88, 905, 101, 108,
+				"def": [ 49, 55, 62, 68, 75, 82, 88, 95, 101, 108,
 						 148, 154, 161, 168, 174, 181, 187, 194, 201, 207,
 						 248, 255, 261, 268, 274, 281, 288, 294, 301, 307,
 						 347, 354, 360, 367, 374, 380, 387, 393, 400, 407,
 						 447, 454, 461, 467, 474, 480, 487, 494, 500, 507,
 						 547, 553, 560, 566, 573, 580, 586, 593, 599, 606 ],
-				"Impact": 93,
+				"impact": 93,
 				"critRate": 0.05,
 				"critDmg": 0.5,
 				"anomalyMastery": 93,
 				"anomalyProf": 94,
-				"PENRatio": 0.0,
-				"PEN": 0,
-				"EnergyRegen": 1.2,
+				"penRatio": 0.0,
+				"pen": 0,
+				"energyRegen": 1.2,
 				"iceBonus": 0.0
 			},
 
 			"skills": {
 				"flashFreeze": false,
 				"flashFreezeStack": [0, 1, 2, 3, 4, 5, 6],
-				"maxStack": 6,
-				"basicAttack": {
-					"normal": {
+				"maxStacks": 6,
+				"basicAttack": [
+					{
+						"variantId": "basic_normal",
 						"name": "Saw Teeth Trimming",
 						"attrDmg": "Physical",
 						"primaryType": "Basic Attack",
-						"secondaryType": "",
+						"secondaryType": null,
 						"multiHit": true,
 						"baseMultiplier": [48.8, 111.1, 297.3],
 						"levelFactor": [4.5, 10.1, 27.1],
 						"variations": ["1-Hit", "2-Hit", "3-Hit"]
 					},
-					"infused": {
+					{
+						"variantId": "basic_infused",
 						"name": "Flash Freeze Trimming",
 						"attrDmg": "Ice",
 						"primaryType": "Basic Attack",
-						"secondaryType": "",
+						"secondaryType": null,
 						"multiHit": true,
 						"baseMultiplier": [99.6, 184.0, 496.2],
 						"levelFactor": [9.1, 16.8, 45.2],
 						"variations": ["1-Hit", "2-Hit", "3-Hit"]
 					},
-					"ap0": {
+					{
+						"variantId": "basic_potential1",
 						"name": "Glacial Blade Wave",
 						"attrDmg": "Ice",
 						"primaryType": "Basic Attack",
-						"secondaryType": "",
+						"secondaryType": null,
 						"multiHit": true,
 						"baseMultiplier": [230.2, 146.8],
 						"levelFactor": [21.0, 13.4],
 						"variations": ["1-Hit", "2-Hit"]
 					},
-					"ap1": {
+					{
+						"variantId": "basic_potential2",
 						"name": "Icy Blade",
 						"attrDmg": "Ice",
 						"primaryType": "Basic Attack",
-						"secondaryType": "",
+						"secondaryType": null,
 						"multiHit": true,
 						"baseMultiplier": [181.2, 220.2, 259.2],
 						"levelFactor": [16.5, 20.1, 23.7],
 						"variations": ["Small Enemy", "Medium Enemy", "Large Enemy"]
 					}
-				},
+				],
 
-				"dodge": {
-					"roamingPress": {
-						"name": "Arctic Ambush (Push)",
+				"dodge": [
+					{
+						"variantId": "dodge_press",
+						"name": "Arctic Ambush (Press)",
 						"attrDmg": "Ice",
 						"primaryType": "Dodge",
 						"secondaryType": "Dash Attack",
 						"multiHit": true,
 						"baseMultiplier": [62.3, 127.6],
-						"levelFactor": [16.5, 20.1, 23.7],
+						"levelFactor": [5.7, 11.6],
 						"variations": ["Spinning Slash", "Swift Scissors"]
 					},
-					"roamingHold": {
+					{
+						"variantId": "dodge_hold",
 						"name": "Arctic Ambush (Hold)",
 						"attrDmg": "Ice",
 						"primaryType": "Dodge",
 						"secondaryType": "Dash Attack",
 						"multiHit": true,
 						"baseMultiplier": [62.3, 158.2],
-						"levelFactor": [5.7, 14.2],
+						"levelFactor": [5.7, 14.4],
 						"variations": ["Spinning Slash", "Charged Scissors"]
 					},
-					"normal": {
+					{
+						"variantId": "dodge_normal",
 						"name": "Monstrous Wave",
 						"attrDmg": "Physical",
 						"primaryType": "Dodge",
@@ -174,7 +233,8 @@
 						"baseMultiplier": 77.0,
 						"levelFactor": 7.0
 					},
-					"infused": {
+					{
+						"variantId": "dodge_infused",
 						"name": "Cold Snap",
 						"attrDmg": "Ice",
 						"primaryType": "Dodge",
@@ -183,7 +243,8 @@
 						"baseMultiplier": 145.7,
 						"levelFactor": 23.3
 					},
-					"perfectDodge": {
+					{
+						"variantId": "dodge_perfect",
 						"name": "Reef Rock",
 						"attrDmg": "Ice",
 						"primaryType": "Dodge",
@@ -192,10 +253,11 @@
 						"baseMultiplier": 152.6,
 						"levelFactor": 13.9
 					}
-				},
+				],
 				
-				"assist": {
-					"quick": {
+				"assist": [
+					{
+						"variantId": "assist_quick",
 						"name": "Shark Sentinel",
 						"attrDmg": "Ice",
 						"primaryType": "Assist",
@@ -204,19 +266,21 @@
 						"baseMultiplier": 121.1,
 						"levelFactor": 11.1
 					},
-					"followUp": {
+					{
+						"variantId": "assist_follow",
 						"name": "Shark Cruiser",
 						"attrDmg": "Ice",
-						"primarytype": "Assist",
+						"primaryType": "Assist",
 						"secondaryType": "Follow-Up",
 						"multiHit": false,
 						"baseMultiplier": 437.9,
 						"levelFactor": 39.9
 					}
-				},
+				],
 
-				"specialAttack": {
-					"normal": {
+				"specialAttack": [
+					{
+						"variantId": "special_normal",
 						"name": "Drift",
 						"attrDmg": "Ice",
 						"primaryType": "Special Attack",
@@ -225,7 +289,8 @@
 						"baseMultiplier": 50.5,
 						"levelFactor": 4.6
 					},
-					"ex0": {
+					{
+						"variantId": "special_ex1",
 						"name": "Tail Swipe",
 						"attrDmg": "Ice",
 						"primaryType": "Special Attack",
@@ -234,7 +299,8 @@
 						"baseMultiplier": 377.2,
 						"levelFactor": 34.3
 					},
-					"ex1": {
+					{
+						"variantId": "special_ex2",
 						"name": "Sharknami",
 						"attrDmg": "Ice",
 						"primaryType": "Special Attack",
@@ -243,19 +309,21 @@
 						"baseMultiplier": 550.3,
 						"levelFactor": 50.3
 					}
-				},
+				],
 
-				"chainAttack": {
-					"chain": {
+				"chainAttack": [
+					{
+						"variantId": "chain_chain",
 						"name": "Avalanche",
 						"attrDmg": "Ice",
 						"primaryType": "Chain Attack",
-						"secondaryType": "",
+						"secondaryType": null,
 						"multiHit": false,
 						"baseMultiplier": 794.6,
 						"levelFactor": 72.3
 					},
-					"ultimate": {
+					{
+						"variantId": "chain_ultimate",
 						"name": "Endless Winter",
 						"attrDmg": "Ice",
 						"primaryType": "Chain Attack",
@@ -264,44 +332,73 @@
 						"baseMultiplier": 1890.8,
 						"levelFactor": 171.9
 					}
-				},
+				],
 
 				"core": {
 					"passive": {
+						"variantId": "core_passive",
 						"name": "Sharp Toothed",
 						"primaryType": "Core Skill",
 						"secondaryType": "Core Passive",
-						"hasBuff": true,
-						"selfApplied": true,
-						"benefits": ["Crit DMG"],
-						"multipliers": {
-							"critDmg": [50.0, 58.3, 66.6, 75.0, 83.3, 91.6, 100.0]
-						}
+						"scope": "self",
+						"buffs": [
+							{
+								"buffId": "ellen_passive",
+								"name": "Sharp Toothed",
+								"effects": [
+									{
+										"statId": "critDmg",
+										"increase": [50.0, 58.3, 66.6, 75.0, 83.3, 91.6, 100.0]
+									}
+								]
+							}
+						]
 					},
 					"additional": {
+						"variantId": "core_additional",
 						"name": "Rising Storm",
 						"primaryType": "Core Skill",
 						"secondaryType": "Additional Ability",
-						"hasBuff": true,
-						"selfApplied": true,
 						"condition": ["Stun", "Ice", "Victoria Housekeeping Co."],
-						"benefits": ["Ice DMG"],
-						"multipliers": {
-							"ice": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
-						}
+						"scope": "self",
+						"buffs": [
+							{
+								"buffId": "ellen_additional",
+								"name": "Rising Storm",
+								"effects": [
+									{
+										"statId": "iceDmg",
+										"increase": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+									}
+								]
+							}
+						]
 					}
 				}
 			},
 
 			"coreEnhancement": {
-				"level": [1, 2, 3, 4, 5, 6],
-				"hasBuff": true,
-				"selfApplied": true,
-				"benefits": ["Basic Attack", "Crit Rate"],
-				"multipliers": {
-					"basicAttack": 25,
-					"critRate": 4.8
-				}
+				"level": [0, 1, 2, 3, 4, 5, 6],
+				"scope": "self",
+				"buffs": [
+					{
+						"buffId": "ellen_core_enhancement",
+						"name": "Core Skill Enhancement",
+						"stacking": {
+							"maxStacks": 3
+						},
+						"effects": [
+							{
+								"statId": "atk",
+								"increase": [25, 50, 75]
+							},
+							{
+								"statId": "critRate",
+								"increase": [4.8, 9.6, 14.4]
+							}
+						]
+					}
+				]
 			}
 		}
 	]
