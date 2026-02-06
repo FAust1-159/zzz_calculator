@@ -1,0 +1,1 @@
+let maxSkillLevel = 11

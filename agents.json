@@ -112,7 +112,70 @@
 						"effects": [
 							{
 								"statId": "iceRes",
-								"decrease": [0.033, 0.05, 0.067, 0.083, 0.1]
+								"decrease": [0.033, 0.05, 0.067, 0.083, 0.100]
+							}
+						]
+					}
+				]
+			},
+
+			"growthConstants" : {
+				"hp": 837238,
+				"atk": 82578,
+				"def": 66203
+			},
+
+			"promotionValues": [
+				{
+					"hp": 0,
+					"atk": 0,
+					"def": 0
+				},
+				{
+					"hp": 423,
+					"atk": 48,
+					"def": 33
+				},
+				{
+					"hp": 847,
+					"atk": 96,
+					"def": 67
+				},
+				{
+					"hp": 1270,
+					"atk": 145,
+					"def": 100
+				},
+				{
+					"hp": 1694,
+					"atk": 193,
+					"def": 134
+				},
+				{
+					"hp": 2117,
+					"atk": 241,
+					"def": 167
+				}
+			],
+
+			"coreEnhancement": {
+				"level": [0, 1, 2, 3, 4, 5, 6],
+				"scope": "self",
+				"buffs": [
+					{
+						"buffId": "ellen_core_enhancement",
+						"name": "Core Skill Enhancement",
+						"stacking": {
+							"maxStacks": 3
+						},
+						"effects": [
+							{
+								"statId": "atk",
+								"increase": [25, 50, 75]
+							},
+							{
+								"statId": "critRate",
+								"increase": [4.8, 9.6, 14.4]
 							}
 						]
 					}
@@ -120,24 +183,9 @@
 			},
 
 			"stats": {
-				"hp": [ 617, 700, 784, 868, 951, 1035, 1119, 1203, 1286, 1370,
-						1877, 1960, 2044, 2128, 2212, 2295, 2379, 2463, 2547, 2630,
-						3138, 3222, 3305, 3389, 3473, 3557, 3640, 3724, 3808, 3891,
-						4398, 4482, 4566, 4649, 4733, 4817, 4901, 4984, 5068, 5152,
-						5659, 5743, 5827, 5911, 5994, 6078, 6162, 6246, 6329, 6413,
-						6920, 7003, 7087, 7171, 7255, 7338, 7422, 7506, 7589, 7673 ],
-				"atk": [ 135, 143, 151, 159, 168, 176, 184, 192, 201, 209, 
-						 265, 273, 282, 290, 298, 306, 315, 323, 331, 339,
-						 396, 404, 412, 420, 429, 437, 445, 453, 462, 470,
-						 527, 535, 544, 552, 560, 569, 577, 585, 593, 602,
-						 658, 666, 674, 683, 691, 699, 707, 716, 724, 732,
-						 788, 797, 805, 813, 821, 830, 838, 846, 854, 863 ],
-				"def": [ 49, 55, 62, 68, 75, 82, 88, 95, 101, 108,
-						 148, 154, 161, 168, 174, 181, 187, 194, 201, 207,
-						 248, 255, 261, 268, 274, 281, 288, 294, 301, 307,
-						 347, 354, 360, 367, 374, 380, 387, 393, 400, 407,
-						 447, 454, 461, 467, 474, 480, 487, 494, 500, 507,
-						 547, 553, 560, 566, 573, 580, 586, 593, 599, 606 ],
+				"hp": 617,
+				"atk": 135,
+				"def": 49,
 				"impact": 93,
 				"critRate": 0.05,
 				"critDmg": 0.5,
@@ -161,8 +209,8 @@
 						"primaryType": "Basic Attack",
 						"secondaryType": null,
 						"multiHit": true,
-						"baseMultiplier": [48.8, 111.1, 297.3],
-						"levelFactor": [4.5, 10.1, 27.1],
+						"baseMultipliers": [0.488, 1.111, 2.973],
+						"levelFactors": [0.045, 0.101, 0.271],
 						"variations": ["1-Hit", "2-Hit", "3-Hit"]
 					},
 					{
@@ -172,8 +220,8 @@
 						"primaryType": "Basic Attack",
 						"secondaryType": null,
 						"multiHit": true,
-						"baseMultiplier": [99.6, 184.0, 496.2],
-						"levelFactor": [9.1, 16.8, 45.2],
+						"baseMultipliers": [0.996, 1.840, 4.962],
+						"levelFactors": [0.091, 0.168, 0.452],
 						"variations": ["1-Hit", "2-Hit", "3-Hit"]
 					},
 					{
@@ -183,8 +231,8 @@
 						"primaryType": "Basic Attack",
 						"secondaryType": null,
 						"multiHit": true,
-						"baseMultiplier": [230.2, 146.8],
-						"levelFactor": [21.0, 13.4],
+						"baseMultipliers": [2.302, 1.468],
+						"levelFactors": [0.210, 0.134],
 						"variations": ["1-Hit", "2-Hit"]
 					},
 					{
@@ -194,8 +242,8 @@
 						"primaryType": "Basic Attack",
 						"secondaryType": null,
 						"multiHit": true,
-						"baseMultiplier": [181.2, 220.2, 259.2],
-						"levelFactor": [16.5, 20.1, 23.7],
+						"baseMultipliers": [1.812, 2.202, 2.592],
+						"levelFactors": [0.165, 0.201, 0.237],
 						"variations": ["Small Enemy", "Medium Enemy", "Large Enemy"]
 					}
 				],
@@ -208,8 +256,8 @@
 						"primaryType": "Dodge",
 						"secondaryType": "Dash Attack",
 						"multiHit": true,
-						"baseMultiplier": [62.3, 127.6],
-						"levelFactor": [5.7, 11.6],
+						"baseMultipliers": [0.623, 1.276],
+						"levelFactors": [0.057, 0.116],
 						"variations": ["Spinning Slash", "Swift Scissors"]
 					},
 					{
@@ -219,8 +267,8 @@
 						"primaryType": "Dodge",
 						"secondaryType": "Dash Attack",
 						"multiHit": true,
-						"baseMultiplier": [62.3, 158.2],
-						"levelFactor": [5.7, 14.4],
+						"baseMultipliers": [0.623, 1.582],
+						"levelFactors": [0.057, 0.144],
 						"variations": ["Spinning Slash", "Charged Scissors"]
 					},
 					{
@@ -230,8 +278,8 @@
 						"primaryType": "Dodge",
 						"secondaryType": "Dash Attack",
 						"multiHit": false,
-						"baseMultiplier": 77.0,
-						"levelFactor": 7.0
+						"baseMultipliers": [0.770],
+						"levelFactors": [0.070]
 					},
 					{
 						"variantId": "dodge_infused",
@@ -240,8 +288,8 @@
 						"primaryType": "Dodge",
 						"secondaryType": "Dash Attack",
 						"multiHit": false,
-						"baseMultiplier": 145.7,
-						"levelFactor": 23.3
+						"baseMultipliers": [1.457],
+						"levelFactors": [0.233]
 					},
 					{
 						"variantId": "dodge_perfect",
@@ -250,8 +298,8 @@
 						"primaryType": "Dodge",
 						"secondaryType": "Dodge Counter",
 						"multiHit": false,
-						"baseMultiplier": 152.6,
-						"levelFactor": 13.9
+						"baseMultipliers": [1.526],
+						"levelFactors": [0.139]
 					}
 				],
 				
@@ -263,8 +311,8 @@
 						"primaryType": "Assist",
 						"secondaryType": "Quick",
 						"multiHit": false,
-						"baseMultiplier": 121.1,
-						"levelFactor": 11.1
+						"baseMultipliers": [1.211],
+						"levelFactors": [0.111]
 					},
 					{
 						"variantId": "assist_follow",
@@ -273,8 +321,8 @@
 						"primaryType": "Assist",
 						"secondaryType": "Follow-Up",
 						"multiHit": false,
-						"baseMultiplier": 437.9,
-						"levelFactor": 39.9
+						"baseMultipliers": [4.379],
+						"levelFactors": [0.399]
 					}
 				],
 
@@ -286,8 +334,8 @@
 						"primaryType": "Special Attack",
 						"secondaryType": "",
 						"multiHit": false,
-						"baseMultiplier": 50.5,
-						"levelFactor": 4.6
+						"baseMultipliers": [0.505],
+						"levelFactors": [0.046]
 					},
 					{
 						"variantId": "special_ex1",
@@ -296,8 +344,8 @@
 						"primaryType": "Special Attack",
 						"secondaryType": "EX",
 						"multiHit": false,
-						"baseMultiplier": 377.2,
-						"levelFactor": 34.3
+						"baseMultipliers": [3.772],
+						"levelFactors": [0.343]
 					},
 					{
 						"variantId": "special_ex2",
@@ -306,8 +354,8 @@
 						"primaryType": "Special Attack",
 						"secondaryType": "EX",
 						"multiHit": false,
-						"baseMultiplier": 550.3,
-						"levelFactor": 50.3
+						"baseMultipliers": [5.503],
+						"levelFactors": [0.503]
 					}
 				],
 
@@ -319,8 +367,8 @@
 						"primaryType": "Chain Attack",
 						"secondaryType": null,
 						"multiHit": false,
-						"baseMultiplier": 794.6,
-						"levelFactor": 72.3
+						"baseMultipliers": [7.946],
+						"levelFactors": [0.723]
 					},
 					{
 						"variantId": "chain_ultimate",
@@ -329,13 +377,13 @@
 						"primaryType": "Chain Attack",
 						"secondaryType": "Ultimate",
 						"multiHit": false,
-						"baseMultiplier": 1890.8,
-						"levelFactor": 171.9
+						"baseMultipliers": [18.908],
+						"levelFactors": [1.719]
 					}
 				],
 
-				"core": {
-					"passive": {
+				"core": [
+					{
 						"variantId": "core_passive",
 						"name": "Sharp Toothed",
 						"primaryType": "Core Skill",
@@ -354,47 +402,344 @@
 							}
 						]
 					},
-					"additional": {
+					{
 						"variantId": "core_additional",
 						"name": "Rising Storm",
 						"primaryType": "Core Skill",
 						"secondaryType": "Additional Ability",
-						"condition": ["Stun", "Ice", "Victoria Housekeeping Co."],
+						"filters": ["Stun", "Ice", "Victoria Housekeeping Co."],
 						"scope": "self",
 						"buffs": [
 							{
 								"buffId": "ellen_additional",
 								"name": "Rising Storm",
+								"stacking": {
+									"stacks": 10
+								},
 								"effects": [
 									{
 										"statId": "iceDmg",
-										"increase": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+										"increase": [3]
 									}
 								]
 							}
 						]
 					}
+				]
+			}
+		},
+
+		{
+			"agentId": "lycaon",
+			"name": "Lycaon",
+			"rank": "S",
+			"specialty": "Stun",
+			"attribute": "Ice",
+			"attackType": "Strike",
+			"faction": "Victoria Housekeeping Co.",
+			"mindscapeCinema": {
+				"level1": {
+					"mcId": "lycaon_mc1",
+					"scope": "self"
+				},
+				"level2": {
+					"mcId": "lycaon_mc2",
+					"scope": "self"
+				},
+				"level3": {
+					"mcId": "lycaon_mc3",
+					"scope": "self",
+					"firstMaxPlus": 2
+				},
+				"level4": {
+					"mcId": "lycaon_mc4",
+					"scope": "self"
+				},
+				"level5": {
+					"mcId": "lycaon_mc5",
+					"scope": "self",
+					"secondMaxPlus": "2"
+				},
+				"level6": {
+					"mcId": "lycaon_mc6",
+					"scope": "enemy",
+					"debuffs": [
+						{
+							"debuffId": "lycaon_mc6_debuff",
+							"name": "Ruthless Hunter",
+							"stacking": {
+								"maxStacks": 5
+							},
+							"effects": [
+								{
+									"statId":"dmgTakenUp",
+									"decrease": [0.1]
+								}
+							]
+						}
+					]
 				}
 			},
 
-			"coreEnhancement": {
-				"level": [0, 1, 2, 3, 4, 5, 6],
-				"scope": "self",
-				"buffs": [
+			"growthConstants": {
+				"hp": 918185,
+				"atk": 61287,
+				"def": 66203
+			},
+
+			"promotionValues": [
+				{
+					"hp": 0,
+					"atk": 0,
+					"def": 0
+				},
+				{
+					"hp": 464,
+					"atk": 37,
+					"def": 33
+				},
+				{
+					"hp": 929,
+					"atk": 75,
+					"def": 67
+				},
+				{
+					"hp": 1393,
+					"atk": 112,
+					"def": 100
+				},
+				{
+					"hp": 1857,
+					"atk": 150,
+					"def": 134
+				},
+				{
+					"hp": 2322,
+					"atk": 187,
+					"def": 167
+				}
+			],
+
+			"coreEnhancementValues": [
+				{
+					"impact": 0,
+					"atk": 0
+				},
+				{
+					"impact": 6,
+					"atk": 0
+				},
+				{
+					"impact": 6,
+					"atk": 25
+				},
+				{
+					"impact": 12,
+					"atk": 25
+				},
+				{
+					"impact": 12,
+					"atk": 50
+				},
+				{
+					"impact": 18,
+					"atk": 50
+				},
+				{
+					"impact": 18,
+					"atk": 75
+				}
+			],
+
+			"stats": {
+				"hp": 677,
+				"atk": 105,
+				"def": 49,
+				"impact": 119,
+				"critRate": 0.05,
+				"critDmg": 0.5,
+				"anomalyMastery": 90,
+				"anomalyProf": 91,
+				"penRatio": 0.0,
+				"pen": 0,
+				"energyRegen": 1.2,
+				"iceBonus": 0.0
+			},
+
+			"skills": {
+				"basicAttack": [
 					{
-						"buffId": "ellen_core_enhancement",
-						"name": "Core Skill Enhancement",
-						"stacking": {
-							"maxStacks": 3
-						},
-						"effects": [
+						"variantId": "basic_normal",
+						"name": "Moon Hunter",
+						"attrDmg": "Physical",
+						"primaryType": "Basic Attack",
+						"secondaryType": null,
+						"multiHit": true,
+						"baseMultipliers": [0.292, 0.349, 0.584, 1.520, 1.807],
+						"levelFactors": [0.027, 0.032, 0.054, 0.139, 0.165]
+					},
+					{
+						"variantId": "basic_charged",
+						"name": "Moon Hunter",
+						"attrDmg": "Ice",
+						"primaryType": "Basic Attack",
+						"secondaryType": "Charged Attack",
+						"multiHit": true,
+						"baseMultipliers": [0.371, 0.564, 0.995, 2.109, 2.776, 3.557],
+						"levelFactors": [0.034, 0.052, 0.091, 0.192, 0.253, 0.324]
+					}
+				],
+
+				"dodge": [
+					{
+						"variantId": "dodge_press",
+						"name": "Keep it Clean",
+						"attrDmg": "Physical",
+						"primaryType": "Dodge",
+						"secondaryType": "Dash Attack",
+						"multiHit": false,
+						"baseMultipliers": [0.473],
+						"levelFactors": [0.043]
+					},
+					{
+						"variantId": "dodge_perfect",
+						"name": "Etiquette Manual",
+						"attrDmg": "Ice",
+						"primaryType": "Dodge",
+						"secondaryType": "Dodge Counter",
+						"multiHit": true,
+						"baseMultipliers": [187],
+						"levelFactors": [17]
+					}
+				],
+
+				"assist": [
+					{
+						"variantId": "assist_quick",
+						"name": "Wolf Pack",
+						"attrDmg": "Ice",
+						"primaryType": "Assist",
+						"secondaryType": "Quick",
+						"multiHit": false,
+						"baseMultipliers": [0.631],
+						"levelFactors": [0.058]
+					},
+					{
+						"variantId": "assist_follow",
+						"name": "Vengeful Counterattack",
+						"attrDmg": "Ice",
+						"primaryType": "Dodge",
+						"secondaryType": "Follow-Up",
+						"multiHit": false,
+						"baseMultipliers": [2.883],
+						"levelFactors": [0.263]
+					}
+				],
+
+				"specialAttack": [
+					{
+						"variantId": "special_normal",
+						"name": "Time to Hunt",
+						"attrDmg": "Ice",
+						"primaryType": "Special Attack",
+						"secondaryType": null,
+						"multiHit": false,
+						"baseMultipliers": [0.771],
+						"levelFactors": [0.071]
+					},
+					{
+						"variantId": "special_charged",
+						"name": "Time to Hunt",
+						"attrDmg": "Ice",
+						"primaryType": "Special Attack",
+						"secondaryType": "Charged Special",
+						"multiHit": false,
+						"baseMultipliers": [1.331],
+						"levelFactors": [0.122]
+					},
+					{
+						"variantId": "special_ex1",
+						"name": "Thrill of the Hunt",
+						"attrDmg": "Ice",
+						"primaryType": "Special Attack",
+						"secondaryType": "EX",
+						"multiHit": false,
+						"baseMultipliers": [5.343],
+						"levelFactors": [0.487]
+					},
+					{
+						"variantId": "special_ex1_charged",
+						"name": "Thrill of the Hunt",
+						"attrDmg": "Ice",
+						"primaryType": "Special Attack",
+						"secondaryType": "EX Charged",
+						"multiHit": true,
+						"baseMultipliers": [7.895],
+						"levelFactors": [0.719]
+					}
+				],
+
+				"chainAttack": [
+					{
+						"variantId": "chain_chain",
+						"name": "As You Wish",
+						"attrDmg": "Ice",
+						"primaryType": "Chain Attack",
+						"secondaryType": null,
+						"multiHit": false,
+						"baseMultipliers": [6.378],
+						"levelFactors": [0.580]
+					},
+					{
+						"variantId": "chain_ultimate",
+						"name": "Mission Complete",
+						"attrDmg": "Ice",
+						"primaryType": "Chain Attack",
+						"secondaryType": "Ultimate",
+						"multiHit": false,
+						"baseMultipliers": [16.941],
+						"levelFactors": [1.481]
+					}
+				],
+
+				"core": [
+					{
+						"variantId": "core_passive",
+						"name": "Metallic Paws",
+						"primaryType": "Core Skill",
+						"secondaryType": "Core Passive",
+						"multiHit": false,
+						"scope": "enemy",
+						"debuffs": [
 							{
-								"statId": "atk",
-								"increase": [25, 50, 75]
-							},
+								"debuffId": "lycaon_passive_debuff",
+								"effects": [
+									{
+										"statId": "iceRes",
+										"decrease": [0.25]
+									}
+								]
+							}
+						]
+					},
+
+					{
+						"variantId": "core_additional",
+						"name": "Elegant Predator",
+						"primaryType": "Core Skill",
+						"secondaryType": "Additional Ability",
+						"multiHit": false,
+						"filters": ["Ice", "Victoria Housekeeping Co."],
+						"scope": "enemy",
+						"debuffs": [
 							{
-								"statId": "critRate",
-								"increase": [4.8, 9.6, 14.4]
+								"debuffId": "lycaon_adtl_debuff",
+								"effects": [
+									{
+										"statId": "stunMultiplier",
+										"decrease": [0.35]
+									}
+								]
 							}
 						]
 					}
