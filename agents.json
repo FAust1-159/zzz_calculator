@@ -2,7 +2,7 @@
 	"version": "1.0.0",
 	"agents": [
 		{
-			"agentId": "ellen",
+			"_id": "ellen",
 			"name": "Ellen",
 			"rank": "S",
 			"specialty": "Attack",
@@ -24,7 +24,7 @@
 							"effects": [
 								{
 									"statId": "critRate",
-									"increase": [0.02, 0.04, 0.06, 0.08, 0.10, 0.12]
+									"increase": [2.0]
 								}
 							]
 						}
@@ -38,10 +38,13 @@
 							"buffId": "ellen_mc2_buff",
 							"name": "Arctic Ocean Predator",
 							"filters": ["Ice", "Attack"],
+							"stacking": {
+								"maxStacks": 3
+							},
 							"effects": [
 								{
 									"statId": "critDmg",
-									"increase": [0.0, 0.2, 0.4, 0.6]
+									"increase": [20.0]
 								}
 							]
 						}
@@ -97,10 +100,15 @@
 					{
 						"buffId": "potential_passive_buff",
 						"name": "Permafrost Zone",
+						"scope": "core_additional",
+						"stacking": {
+							"maxStacks": 4
+						},
 						"effects": [
 							{
 								"statId": "critDmg",
-								"increase": [0.016, 0.024, 0.032, 0.040, 0.048]
+								"increase": [1.6],
+								"levelFactors": [0.8]
 							}
 						]
 					}
@@ -112,7 +120,8 @@
 						"effects": [
 							{
 								"statId": "iceRes",
-								"decrease": [0.033, 0.05, 0.067, 0.083, 0.100]
+								"decrease": [3.3, 5.0, 6.7, 8.3, 10.0],
+								"maxLevel": [5]
 							}
 						]
 					}
@@ -158,7 +167,7 @@
 				}
 			],
 
-			"coreEnhancement": {
+			"coreEnhancementValues": {
 				"level": [0, 1, 2, 3, 4, 5, 6],
 				"scope": "self",
 				"buffs": [
@@ -430,7 +439,7 @@
 		},
 
 		{
-			"agentId": "lycaon",
+			"_id": "lycaon",
 			"name": "Lycaon",
 			"rank": "S",
 			"specialty": "Stun",
@@ -576,7 +585,8 @@
 						"secondaryType": null,
 						"multiHit": true,
 						"baseMultipliers": [0.292, 0.349, 0.584, 1.520, 1.807],
-						"levelFactors": [0.027, 0.032, 0.054, 0.139, 0.165]
+						"levelFactors": [0.027, 0.032, 0.054, 0.139, 0.165],
+						"variations": ["1-Hit", "2-Hit", "3-Hit", "4-Hit", "5-Hit"]
 					},
 					{
 						"variantId": "basic_charged",
@@ -586,7 +596,8 @@
 						"secondaryType": "Charged Attack",
 						"multiHit": true,
 						"baseMultipliers": [0.371, 0.564, 0.995, 2.109, 2.776, 3.557],
-						"levelFactors": [0.034, 0.052, 0.091, 0.192, 0.253, 0.324]
+						"levelFactors": [0.034, 0.052, 0.091, 0.192, 0.253, 0.324],
+						"variations": ["1-Hit", "2-Hit", "3-Hit", "4-Hit", "5-Hit", "6-Hit"]
 					}
 				],
 
@@ -742,6 +753,328 @@
 								]
 							}
 						]
+					}
+				]
+			}
+		},
+
+		{
+			"_id": "astra",
+			"name": "Astra Yao",
+			"rank": "S",
+			"specialty": "Support",
+			"attribute": "Ether",
+			"attackType": "Strike",
+			"faction": "Stars of Lyra",
+			"mindscapeCinema": {
+				"level1": {
+					"mcId": "astra_mc1",
+					"name": "12-Tone Equal Temperament",
+					"debuffs": [
+						{
+							"debuffId": "astra_mc1_debuff",
+							"stacking": {
+								"maxStacks": 3
+							},
+							"effects": [
+								{
+									"statId": "allRes",
+									"decrease": [0.06]
+								}
+							]
+						}
+					]
+				},
+				"level2": {
+					"mcId": "astra_mc2",
+					"name": "Art of Greed",
+					"buffs": {
+
+					}
+				}
+			},
+
+			"growthConstants": {
+				"hp": 939358,
+            	"atk": 59961,
+            	"def": 65524 
+			},
+
+			"promotionValues": [
+				{
+					"hp": 0,
+					"atk": 0,
+					"def": 0
+				},
+				{
+					"hp": 475,
+					"atk": 37,
+					"def": 33
+				},
+				{
+					"hp": 950,
+					"atk": 74,
+					"def": 66
+				},
+				{
+					"hp": 1425,
+					"atk": 110,
+					"def": 99
+				},
+				{
+					"hp": 1900,
+					"atk": 147,
+					"def": 133
+				},
+				{
+					"hp": 2375,
+					"atk": 184,
+					"def": 166
+				}
+			],
+
+			"coreEnhancementValues": [
+				{
+					"energyRegen": 0,
+					"atk": 0
+				},
+				{
+					"energyRegen": 0.12,
+					"atk": 0
+				},
+				{
+					"energyRegen": 0.12,
+					"atk": 25
+				},
+				{
+					"energyRegen": 0.24,
+					"atk": 25
+				},
+				{
+					"energyRegen": 0.24,
+					"atk": 50
+				},
+				{
+					"energyRegen": 0.36,
+					"atk": 50
+				},
+				{
+					"energyRegen": 0.36,
+					"atk": 75
+				}
+			],
+
+			"stats": {
+				"hp": 692,
+				"atk": 103,
+				"def": 48,
+				"impact": 83,
+				"critRate": 0.05,
+				"critDmg": 0.5,
+				"anomalyMastery": 92,
+				"anomalyProf": 93,
+				"penRatio": 0,
+				"pen": 0,
+				"energyRegen": 1.2,
+				"etherBonus": 0
+			},
+
+			"skills": {
+				"idyllicCadenza": true,
+				"basicAttack": [
+					{
+						"variantId": "basic_infused",
+						"name": "Capriccio",
+						"attrDmg": "Ether",
+						"primaryType": "Basic Attack",
+						"secondaryType": null,
+						"multiHit": true,
+						"baseMultipliers": [0.438, 0.591, 1.209, 2.707],
+						"levelFactors": [0.04, 0.054, 0.11, 0.247],
+						"variations": ["1-Hit", "2-Hit", "3-Hit", "4-Hit"]
+					},
+					{
+						"variantId": "basic_infused_state",
+						"name": "Interlude",
+						"attrDmg": "Ether",
+						"primaryType": "Basic Attack",
+						"secondaryType": null,
+						"multiHit": true,
+						"baseMultipliers": [0.55, 0.55, 0.55, 0.55, 0.55],
+						"levelFactors": [0.05, 0.05, 0.05, 0.05, 0.05],
+						"variations": ["1-Hit", "2-Hit", "3-Hit", "4-Hit", "5-Hit"],
+						"stacking": {
+							"maxStacks": 2
+						}
+					},
+					{
+						"variantId": "basic_dodge_state",
+						"name": "Chorus",
+						"attrDmg": "Ether",
+						"primaryType": "Basic Attack",
+						"secondaryType": null,
+						"multiHit": false,
+						"baseMultipliers": [0.55],
+						"levelFactors": [0.05],
+						"stacking": {
+							"maxStacks": 4
+						}
+					},
+					{
+						"variantId": "basic_charged",
+						"name": "Finale",
+						"attrDmg": "Ether",
+						"primaryType": "Basic Attack",
+						"secondaryType": null,
+						"multiHit": false,
+						"baseMultipliers": [0.55],
+						"levelFactors": [0.05]
+					}
+				],
+
+				"dodge": [
+					{
+						"variantId": "dodge_normal",
+						"name": "Lunar Eclipse Melody",
+						"attrDmg": "Ether",
+						"primaryType": "Dodge",
+						"secondaryType": "Dash Attack",
+						"multiHit": false,
+						"baseMultipliers": [0.807],
+						"levelFactors": [0.074]
+					},
+					{
+						"variantId": "dodge_perfect",
+						"name": "Umbrella Waltz",
+						"attrDmg": "Ether",
+						"primaryType": "Dodge",
+						"secondaryType": "Dodge Counter",
+						"multiHit": false,
+						"baseMultipliers": [1.1],
+						"levelFactors": [0.1]
+					}
+				],
+
+				"assist": [
+					{
+						"variantId": "assist_quick",
+						"name": "One Luminous Sky",
+						"attrDmg": "Ether",
+						"primaryType": "Assist",
+						"secondaryType": "Quick",
+						"multiHit": false,
+						"baseMultipliers": [0.55],
+						"levelFactors": [0.05]
+					},
+					{
+						"variantId": "assist_follow",
+						"name": "Chorus",
+						"attrDmg": "Ether",
+						"primaryType": "Basic Attack",
+						"secondaryType": "Follow-Up",
+						"multiHit": false,
+						"baseMultipliers": [3.046],
+						"levelFactors": [0.227]
+					}
+				],
+
+				"specialAttack": [
+					{
+						"variantId": "special_normal",
+						"name": "Windchimes & Oaths",
+						"attrDmg": "Ether",
+						"primaryType": "Special Attack",
+						"secondaryType": null,
+						"multiHit": false,
+						"baseMultipliers": [0.55],
+						"levelFactors": [0.04],
+						"stacking": {
+							"maxStacks": 4
+						},
+						"buffs": [
+							{
+								"buffId": "astra_spec_buff",
+								"name": "Idyllic Cadenza",
+								"scope": "team",
+								"effects": [
+									{
+										"statId": "allDmg",
+										"increase": [0.09]
+									},
+									{
+										"statId": "critDmg",
+										"increase": [0.085]
+									}
+								]
+							}
+						]
+					},
+					{
+						"variantId": "special_assist_state",
+						"name": "Chorus",
+						"attrDmg": "Ether",
+						"primaryType": "Special Attack",
+						"secondaryType": null,
+						"multiHit": false,
+						"baseMultipliers": [0.46, 0.72],
+						"levelFactors": [0.042, 0.086]
+					}
+				],
+
+				"chainAttack": [
+					{
+						"variantId": "chain_chain",
+						"name": "Tipsy Concerto",
+						"attrDmg": "Ether",
+						"primaryType": "Chain Attack",
+						"secondaryType": null,
+						"multiHit": false,
+						"baseMultipliers": [6.718],
+						"levelFactors": [0.611]
+					},
+					{
+						"variantId": "chain_ultimate",
+						"name": "Fantasian Sonata",
+						"attrDmg": "Ether",
+						"primaryType": "Chain Attack",
+						"secondaryType": "Ultimate",
+						"multiHit": false,
+						"baseMultipliers": [19.598],
+						"levelFactors": [1.782]
+					}
+				],
+
+				"core": [
+					{
+						"variantId": "core_passive",
+						"name": "Graceful Andante",
+						"primaryType": "Core Skill",
+						"secondaryType": "Core Passive",
+						"scope": "team",
+						"buffs": [
+							{
+								"buffId": "astra_passive_buff",
+								"stacking": {
+									"maxStacks": 6
+								},
+								"effects": [
+									{
+										"statId": "atkPercent",
+										"increase": [0.22],
+										"levelFactors": [0.0217],
+										"increaseCap": 1200
+									}
+								]
+							}
+						]
+					},
+					{
+						"variantId": "core_additional",
+						"name": "Moonlit Frenzy",
+						"primaryType": "Core Skill",
+						"secondaryType": "Additional Ability",
+						"filters": ["Attack", "Anomaly", "Rupture"],
+						"scope": "self"
 					}
 				]
 			}
